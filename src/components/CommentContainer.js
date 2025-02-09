@@ -41,7 +41,7 @@ const CommentContainer = ({ id }) => {
       `https://www.googleapis.com/youtube/v3/commentThreads?key=${GOOGLE_API_KEY}&textFormat=plainText&part=snippet&videoId=${id}&maxResults=100`
     );
     const json = await response.json();
-    console.log(json);
+  
     setInfo(json.items);
   };
 
@@ -50,6 +50,8 @@ const CommentContainer = ({ id }) => {
       getComments();
     }
   }, [id]);
+
+  
 
   return (
     <div className="comments-container bg-white p-4 rounded-lg shadow-md mt-4 pl-25">
